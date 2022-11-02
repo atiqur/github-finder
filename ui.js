@@ -1,8 +1,10 @@
 class UI {
   constructor() {
     this.profile = document.getElementById("profile")
+    this.repos = document.getElementById("")
   }
 
+  // Show User Profile
   showProfile(user) {
     this.profile.innerHTML = `
         <div class="card card-body mb-3">
@@ -32,6 +34,32 @@ class UI {
       `
   }
 
+  // Show user repos
+  showRepos(repos) {
+    let output = ""
+
+    repos.forEach(function (repo) {
+      output += `
+        <div class="card card-body mb-2">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            </div>
+            <div class="col-md-6">
+            <span class="badge badge-primary">Stars: ${repo.stargazers_count}</span>
+            <span class="badge badge-secondary">Watchers: ${repo.watchers_count}</span>
+            <span class="badge badge-success">Forks: ${repo.forms_count}</span>
+            </div>
+          </div>
+        </div>
+      `
+    })
+
+    // Output repos
+    document.getElementById("repos").innerHTML = output
+  }
+
+  // Show Alert
   showAlert(message, className) {
     this.clearAlert()
     const div = document.createElement("div")
@@ -46,6 +74,7 @@ class UI {
     }, 3000)
   }
 
+  // Clear Alert
   clearAlert() {
     const currentAlert = document.querySelector(".alert")
     if (currentAlert) {
@@ -53,6 +82,7 @@ class UI {
     }
   }
 
+  // Clear Profile
   clearProfile() {
     this.profile.innerHTML = ""
   }
