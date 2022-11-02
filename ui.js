@@ -15,9 +15,10 @@ class UI {
               <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
               <span class="badge badge-secondary">Public Gists: ${user.public_gists}</span>
               <span class="badge badge-success">Followers: ${user.followers}</span>
-              <span class="badge badge-info">Following: ${user.following}</span>
+              <span class="badge badge-info">Following: ${user.following}</span> 
               <br><br>
               <ul class="list-group">
+                <li class="list-group-item">Name: ${user.name}</li>
                 <li class="list-group-item">Company: ${user.company}</li>
                 <li class="list-group-item">Website/Blog: ${user.blog}</li>
                 <li class="list-group-item">Location: ${user.location}</li>
